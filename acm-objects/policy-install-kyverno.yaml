@@ -1,35 +1,41 @@
-apiVersion: policy.open-cluster-management.io/v1
-kind: ConfigurationPolicy
-metadata:
-  name: policy-kyverno-namespace
-spec:
-  remediationAction: inform
-  severity: low
-  object-templates:
-    - complianceType: musthave
-      objectDefinition:
-        kind: Namespace
-        apiVersion: v1
-        metadata:
-          name: kyverno
-    - complianceType: musthave
-      objectDefinition:
-        kind: Namespace
-        apiVersion: v1
-        metadata:
-          name: kyverno-channel
+#apiVersion: policy.open-cluster-management.io/v1
+#kind: ConfigurationPolicy
+#metadata:
+#  name: policy-kyverno-namespace
+#spec:
+#  remediationAction: inform
+#  severity: low
+#  object-templates:
+#    - complianceType: musthave
+#      objectDefinition:
+#        kind: Namespace
+#        apiVersion: v1
+#        metadata:
+#          name: kyverno
+#    - complianceType: musthave
+#      objectDefinition:
+#        kind: Namespace
+#        apiVersion: v1
+#        metadata:
+#          name: kyverno-channel
+#---
+#apiVersion: apiextensions.k8s.io/v1
+#kind: CustomResourceDefinition
+#metadata:
+#  annotations:
+#    meta.helm.sh/release-name: kyverno
+#    meta.helm.sh/release-namespace: kyverno
+#  labels:
+#    app.kubernetes.io/managed-by: Helm
+#  name: policyreports.wgpolicyk8s.io
+#spec:
+#  scope: Namespace
 ---
-apiVersion: apiextensions.k8s.io/v1
-kind: CustomResourceDefinition
+apiVersion: v1
+kind: Namespace
 metadata:
-  annotations:
-    meta.helm.sh/release-name: kyverno
-    meta.helm.sh/release-namespace: kyverno
-  labels:
-    app.kubernetes.io/managed-by: Helm
-  name: policyreports.wgpolicyk8s.io
-spec:
-  scope: Namespaced
+  name: kyverno
+spec: {}
 ---
 apiVersion: app.k8s.io/v1beta1
 kind: Application
@@ -100,7 +106,7 @@ metadata:
 spec:
   clusterSelector:
     matchLabels:
-      environment: dev                     
+      install: kyverno 
 --- 
 apiVersion: apps.open-cluster-management.io/v1
 kind: Channel
