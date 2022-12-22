@@ -116,6 +116,6 @@ metadata:
   name: kyverno
   namespace: kyverno-channel
 spec:
-  pathname: https://github.com/tommeramber/acm-kyverno-integration
+  pathname: https://github.com/tommeramber/acm-kyverno-integration/tree/master/kyverno
         #  pathname: https://github.com/Destorntw/kyverno
   type: HelmRepo
