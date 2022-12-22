@@ -36,7 +36,7 @@ entries:
       artifacthub.io/prerelease: "false"
     apiVersion: v2
     appVersion: v1.8.5
-    created: "2022-12-22T11:14:12.710731613Z"
+    created: "2022-12-22T14:34:01.925524434Z"
     description: Kubernetes Native Policy Management
     digest: c99fc7115cde6df3aa6e7601904460e735c21f46bed01923999d43051f923b5d
     home: https://kyverno.io/
@@ -58,4 +58,4 @@ entries:
     urls:
     - https://tommeramber.github.io/acm-kyverno-integration/kyverno-2.6.5.tgz
     version: 2.6.5
-generated: "2022-12-22T11:14:12.699162107Z"
+generated: "2022-12-22T14:34:01.898228827Z"
